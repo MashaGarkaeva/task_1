@@ -2,9 +2,9 @@ import math
 from array import array
 import matplotlib.pyplot as plt
 import numpy as np
-
-'''
+
 plt.grid()
+'''
 x = np.linspace(-3.14, 3.14, 99)
 y = np.sin(x)
 y1 = np.sin(x) + 3
