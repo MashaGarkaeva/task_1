@@ -2,9 +2,9 @@ import math
 from array import array
 import matplotlib.pyplot as plt
 import numpy as np
-
-plt.grid()
+
 '''
+plt.grid()
 x = np.linspace(-3.14, 3.14, 99)
 y = np.sin(x)
 y1 = np.sin(x) + 3
@@ -18,7 +18,8 @@ plt.show()'''
 
 x = []
 y = []
-y1 = []
+up = []
+low = []
 start = -3.14
 end = 3.14
 step = (3.14 + 3.14) / 99
@@ -26,10 +27,16 @@ step = (3.14 + 3.14) / 99
 current = start
 while current <= end:
     x.append(current)
-    y.append(math.sin(current))
-    y1.append(math.sin(current) + 3)
+    sin_x = math.sin(current * 3)
+    y.append(sin_x)
+
+    sin_ul = math.sin(current)
+    up.append(max(sin_x, sin_ul))
+    low.append(sin_ul)
+
     current += step
 
 plt.plot(x, y)
-plt.plot(x, y1)
+plt.plot(x, up)
+plt.plot(x, low)
 plt.show()
